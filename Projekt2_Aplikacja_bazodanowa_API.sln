@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34701.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Projekt2_Aplikacja_bazodanowa_API", "Projekt2_Aplikacja_bazodanowa_API\Projekt2_Aplikacja_bazodanowa_API.csproj", "{8AF9C071-2297-4519-87C7-15B6DDE9A243}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8AF9C071-2297-4519-87C7-15B6DDE9A243}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AF9C071-2297-4519-87C7-15B6DDE9A243}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AF9C071-2297-4519-87C7-15B6DDE9A243}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AF9C071-2297-4519-87C7-15B6DDE9A243}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {136FE6EC-16EE-4A9A-96CC-9F82E93FD4CA}
+	EndGlobalSection
+EndGlobal
