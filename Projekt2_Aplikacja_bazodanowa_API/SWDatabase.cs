@@ -22,13 +22,12 @@ public class SWDatabase : DbContext
 
     public SWDatabase()
     {
-        var folder = Environment.SpecialFolder.LocalApplicationData;
-        var path = Environment.GetFolderPath(folder);
-        DbPath = System.IO.Path.Join(path, "Database\\starwars.db");
+        
+        DbPath = "Database\\starwars.db";
     }
 
     
     protected override void OnConfiguring(DbContextOptionsBuilder options)
-        => options.UseSqlite($"Data Source = {DbPath}");
+        => options.UseSqlite(@"Data Source = C:\Users\user\Desktop\studia\Semestr_6\.Net_i_Java\Projekt2_Aplikacja_bazodanowa_API\DB\starwars.db");
 }
 
