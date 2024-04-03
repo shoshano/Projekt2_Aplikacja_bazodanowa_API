@@ -8,6 +8,7 @@ namespace StarWars.Data
 {
     public class Root : SWEntity
     {
+        public int Id { get; set; }
         public string films { get; set; }
         public string people { get; set; }
         public string planets { get; set; }

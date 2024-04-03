@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace StarWars.Data
 {
-    internal class Planets : SWEntity
+    public class Planets : SWEntity
     {
+        public int Id { get; set; }
         public string name { get; set; }            //Search Fields
         public string diameter { get; set; }
         public string rotation_period { get; set; }

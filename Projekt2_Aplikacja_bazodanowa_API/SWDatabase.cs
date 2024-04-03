@@ -11,6 +11,12 @@ public class SWDatabase : DbContext
 {
     public DbSet<Films> films { get; set; }
     public DbSet<People> people { get; set; }
+    public DbSet<Planets> planets { get; set; }
+    public DbSet<Root> root { get; set; }
+    public DbSet<Species> species { get; set; }
+    public DbSet<Starships> starships { get; set; }
+    public DbSet<Vehicles> vehicles { get; set; }
+
 
     public string DbPath { get; }
 
@@ -18,12 +24,11 @@ public class SWDatabase : DbContext
     {
         var folder = Environment.SpecialFolder.LocalApplicationData;
         var path = Environment.GetFolderPath(folder);
-        DbPath = System.IO.Path.Join(path, "starwars.db");
+        DbPath = System.IO.Path.Join(path, "Database\\starwars.db");
     }
 
-    // The following configures EF to create a Sqlite database file in the
-    // special "local" folder for your platform.
+    
     protected override void OnConfiguring(DbContextOptionsBuilder options)
-        => options.UseSqlite(@"Data Source = starwars.db");
+        => options.UseSqlite($"Data Source = {DbPath}");
 }
 

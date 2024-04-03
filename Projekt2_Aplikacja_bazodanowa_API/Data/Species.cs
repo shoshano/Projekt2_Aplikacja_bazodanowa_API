@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace StarWars.Data
 {
-    internal class Species : SWEntity
+    public class Species : SWEntity
     {
+        public int Id { get; set; }
         public string name {  get; set; }           //Search Fields
         public string classification { get; set; }
         public string designation { get; set; }

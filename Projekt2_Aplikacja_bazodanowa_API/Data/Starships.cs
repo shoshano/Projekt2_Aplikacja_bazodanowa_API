@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace StarWars.Data
 {
-    internal class Starships : SWEntity
+    public class Starships : SWEntity
     {
+        public int Id { get; set; }
         public required string name { get; set; }   //Search Fields
         public string model { get; set; }           //Search Fields
         public string starship_class { get; set; }
