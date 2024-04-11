@@ -24,5 +24,41 @@ namespace StarWars.Data
         public required string url { get; set; }
         public required DateTime created { get; set; }
         public required DateTime edited { get; set; }
+
+        public Vehicles(int id)
+        {
+            Id = id;
+            name = " ";
+            model = " ";
+            vehicle_class = " ";
+            manufacturer = " ";
+            cost_in_credits = " ";
+            length = " ";
+            crew = " ";
+            passengers = " ";
+            max_atmosphering_speed = " ";
+            cargo_capacity = " ";
+
+        }
+
+        public override string ToString()
+        {
+            string str = $"Name: {name}" + Environment.NewLine;
+            str += $"Model: {model}" + Environment.NewLine;
+            str += $"Vehicle class: {vehicle_class}" + Environment.NewLine;
+            str += $"Manufacturer: {manufacturer}" +Environment.NewLine;
+            str += $"Cost in credits: {cost_in_credits}" + Environment.NewLine;
+            str += $"Length: {length}" + Environment.NewLine;
+            str += $"Crew: {crew}" +Environment.NewLine;
+            str += $"Number of passengers: {passengers}" + Environment.NewLine;
+            str += $"Max atmosphering speed: {max_atmosphering_speed}" + Environment.NewLine;
+            str += $"Cargo capacity: {cargo_capacity}" + Environment.NewLine;
+            return str;
+        }
+        public string showName()
+        {
+            string n = $"{Id}. {name}";
+            return n;
+        }
     }
 }

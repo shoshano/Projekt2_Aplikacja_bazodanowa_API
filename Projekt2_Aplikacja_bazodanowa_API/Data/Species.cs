@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -25,5 +26,41 @@ namespace StarWars.Data
         public required DateTime created { get; set; }
         public required DateTime edited { get; set; }
 
+        public Species(int id)
+        {
+            Id = id;
+            name = " ";
+            classification = " ";
+            designation = " ";
+            average_height = " ";
+            average_lifespan = " "; 
+            eye_colors = " ";
+            hair_colors = " ";
+            skin_colors = " ";
+            language = " ";
+            
+            
+
+        }
+
+        public override string ToString()
+        {
+            string str = $"Name: {name}" + Environment.NewLine;
+            str += $"Classification: {classification}" + Environment.NewLine;
+            str += $"Designation: {designation}" +Environment.NewLine;
+            str += $"Average hight: {average_height}" + Environment.NewLine;
+            str += $"Average lifespan: {average_lifespan}" + Environment.NewLine;
+            str += $"Eye colors: {eye_colors}" + Environment.NewLine;
+            str += $"Hair colors: {hair_colors}" + Environment.NewLine;
+            str += $"Skin colors: {skin_colors}" + Environment.NewLine;
+            str += $"Language: {language}" +Environment.NewLine;
+            return str;
+        }
+
+        public string showName()
+        {
+            string n = $"{Id}. {name}";
+            return n;
+        }
     }
 }

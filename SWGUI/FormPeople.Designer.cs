@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            TreeNode treeNode1 = new TreeNode("List of people");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPeople));
             pictureBox_LOGO = new PictureBox();
-            treeView_list = new TreeView();
             button_return = new Button();
             label_people = new Label();
+            listBox_plist = new ListBox();
+            label2 = new Label();
+            textBox1 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox_LOGO).BeginInit();
             SuspendLayout();
             // 
@@ -47,18 +48,6 @@
             pictureBox_LOGO.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox_LOGO.TabIndex = 0;
             pictureBox_LOGO.TabStop = false;
-            // 
-            // treeView_list
-            // 
-            treeView_list.BackColor = Color.Black;
-            treeView_list.ForeColor = Color.Yellow;
-            treeView_list.Location = new Point(47, 121);
-            treeView_list.Name = "treeView_list";
-            treeNode1.Name = "Node0";
-            treeNode1.Text = "List of people";
-            treeView_list.Nodes.AddRange(new TreeNode[] { treeNode1 });
-            treeView_list.Size = new Size(406, 509);
-            treeView_list.TabIndex = 1;
             // 
             // button_return
             // 
@@ -86,6 +75,43 @@
             label_people.TabIndex = 3;
             label_people.Text = "PEOPLE";
             // 
+            // listBox_plist
+            // 
+            listBox_plist.BackColor = Color.Black;
+            listBox_plist.Font = new Font("Microsoft YaHei", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            listBox_plist.ForeColor = Color.Yellow;
+            listBox_plist.FormattingEnabled = true;
+            listBox_plist.ItemHeight = 28;
+            listBox_plist.Location = new Point(67, 125);
+            listBox_plist.Name = "listBox_plist";
+            listBox_plist.Size = new Size(376, 480);
+            listBox_plist.TabIndex = 4;
+            listBox_plist.SelectedIndexChanged += listBox_plist_SelectedIndexChanged;
+            listBox_plist.MouseDoubleClick += listBox_plist_MouseDoubleClick;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Microsoft YaHei", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            label2.ForeColor = Color.Yellow;
+            label2.Location = new Point(615, 125);
+            label2.Name = "label2";
+            label2.Size = new Size(132, 46);
+            label2.TabIndex = 5;
+            label2.Text = "NAME";
+            // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.Gold;
+            textBox1.Font = new Font("Microsoft YaHei", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            textBox1.Location = new Point(615, 186);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.ScrollBars = ScrollBars.Both;
+            textBox1.Size = new Size(408, 380);
+            textBox1.TabIndex = 6;
+            // 
             // FormPeople
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -93,9 +119,11 @@
             BackgroundImage = Properties.Resources.background;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1128, 673);
+            Controls.Add(textBox1);
+            Controls.Add(label2);
+            Controls.Add(listBox_plist);
             Controls.Add(label_people);
             Controls.Add(button_return);
-            Controls.Add(treeView_list);
             Controls.Add(pictureBox_LOGO);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FormPeople";
@@ -108,8 +136,10 @@
         #endregion
 
         private PictureBox pictureBox_LOGO;
-        private TreeView treeView_list;
         private Button button_return;
         private Label label_people;
+        private ListBox listBox_plist;
+        private Label label2;
+        private TextBox textBox1;
     }
 }

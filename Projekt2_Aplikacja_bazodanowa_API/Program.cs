@@ -9,6 +9,7 @@
         {
             APITest test = new APITest();
             test.GetData().Wait();
+            test.GetAllSpecies().Wait();
         }
     }
 }

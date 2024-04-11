@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -23,5 +24,40 @@ namespace StarWars.Data
         public required string url { get; set; }
         public required DateTime created { get; set; }
         public required DateTime edited { get; set; }
+
+        public Planets(int id)
+        {
+            Id = id;
+            name = " ";
+            diameter = " ";
+            rotation_period = " ";
+            orbital_period = " ";
+            gravity = " ";
+            population = " ";
+            climate = " ";
+            terrain = " ";
+            surface_water = " ";
+
+        }
+
+        public override string ToString()
+        {
+            string str = $"Name: {name}" + Environment.NewLine;
+            str += $"Diameter: {diameter}" + Environment.NewLine;
+            str += $"Rotation period: {rotation_period}" + Environment.NewLine;
+            str += $"Orbital period: {orbital_period}" +Environment.NewLine;
+            str += $"Gravity: {gravity}" + Environment.NewLine;
+            str += $"Population: {population}" + Environment.NewLine;
+            str += $"Climate: {climate}" + Environment.NewLine;
+            str += $"Terrain: {terrain}"+ Environment.NewLine;
+            str += $"Surface water: {surface_water}" + Environment.NewLine;
+            return str;
+        }
+
+        public string showName()
+        {
+            string n = $"{Id}. {name}";
+            return n;
+        }
     }
 }

@@ -15,11 +15,20 @@ namespace StarWars.Data
         public string species { get; set; }
         public string starships { get; set; }
         public string vehicles { get; set; }
-        public Root() { }
+        public Root(int id) 
+        {
+            Id = id;
+            films = " ";
+            people = " ";
+            planets = " ";
+            species = " ";
+            starships = " ";
+            vehicles = " ";
+        }
 
         public override string ToString()
         {
-            return $"Films, People, Planets, Speciec, Starships, Vehicles" + Environment.NewLine;
+            return $"Films: {films}, People: {people}, Planets: {planets}, Speciec: {species}, Starships: {starships}, Vehicles: {vehicles}" + Environment.NewLine;
         }
     }
 }
