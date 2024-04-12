@@ -19,7 +19,7 @@ namespace StarWars.Data
         public string hair_colors { get; set;}
         public string skin_colors { get; set;}
         public string language { get; set; }
-        public string homeworld {  get; set; }
+        public string? homeworld {  get; set; }
         public List<string> people { get; set; }
         public List<string> films { get; set; }
         public required string url { get; set; }

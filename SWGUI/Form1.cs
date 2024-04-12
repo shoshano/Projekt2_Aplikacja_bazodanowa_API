@@ -16,7 +16,7 @@ namespace SWGUI
             InitializeComponent();
             Client = new HttpClient();
             SWdatabase = new SWdatabase();
-            if( SWdatabase.root == null ) 
+            if( SWdatabase.root.Any() != null) 
             {
                 GetData();
             }
@@ -39,7 +39,7 @@ namespace SWGUI
 
         private async void Label_people_Click(object sender, EventArgs e)
         {
-            if (SWdatabase.people == null)
+            if (SWdatabase.people.Any() != null)
             {
                 Client = new HttpClient();
                 string url = root.people;
@@ -91,7 +91,7 @@ namespace SWGUI
 
         private async void Label_films_Click(object sender, EventArgs e)
         {
-            if (SWdatabase.films == null)
+            if (SWdatabase.films.Any() != null)
             {
                 Client = new HttpClient();
                 ListOfFilms films = new ListOfFilms();
@@ -117,7 +117,7 @@ namespace SWGUI
 
         private async void LAbel_Starships_Click(object sender, EventArgs e)
         {
-            if (SWdatabase.starships == null)
+            if (SWdatabase.starships.Any() != null)
             {
                 Client = new HttpClient();
                 string url = root.starships;
@@ -144,7 +144,7 @@ namespace SWGUI
 
         private async void Label_vehicles_Click(object sender, EventArgs e)
         {
-            if (SWdatabase.vehicles == null)
+            if (SWdatabase.vehicles.Any() != null)
             {
                 Client = new HttpClient();
                 string url = root.vehicles;
@@ -170,7 +170,7 @@ namespace SWGUI
 
         private async void Label_planets_Click(object sender, EventArgs e)
         {
-            if (SWdatabase.planets == null)
+            if (SWdatabase.planets.Any() != null)
             {
                 Client = new HttpClient();
                 string url = root.planets;
