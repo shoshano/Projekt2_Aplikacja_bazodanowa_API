@@ -86,7 +86,6 @@
             listBox_plist.Name = "listBox_plist";
             listBox_plist.Size = new Size(376, 480);
             listBox_plist.TabIndex = 4;
-            listBox_plist.SelectedIndexChanged += listBox_plist_SelectedIndexChanged;
             listBox_plist.MouseDoubleClick += listBox_plist_MouseDoubleClick;
             // 
             // label2

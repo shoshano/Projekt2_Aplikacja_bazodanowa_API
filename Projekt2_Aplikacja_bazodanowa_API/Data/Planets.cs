@@ -40,10 +40,10 @@ namespace StarWars.Data
 
         }
 
-        public override string ToString()
+        
+        public string showAll()
         {
-            string str = $"Name: {name}" + Environment.NewLine;
-            str += $"Diameter: {diameter}" + Environment.NewLine;
+            string str = $"Diameter: {diameter}" + Environment.NewLine;
             str += $"Rotation period: {rotation_period}" + Environment.NewLine;
             str += $"Orbital period: {orbital_period}" +Environment.NewLine;
             str += $"Gravity: {gravity}" + Environment.NewLine;
@@ -54,7 +54,7 @@ namespace StarWars.Data
             return str;
         }
 
-        public string showName()
+        public override string ToString()
         {
             string n = $"{Id}. {name}";
             return n;

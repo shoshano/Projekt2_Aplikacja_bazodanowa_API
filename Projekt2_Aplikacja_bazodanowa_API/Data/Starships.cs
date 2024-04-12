@@ -46,10 +46,9 @@ namespace StarWars.Data
 
         }
 
-        public override string ToString()
+        public string showAll()
         {
-            string str = $"Name: {name}" + Environment.NewLine;
-            str += $"Model: {model}" + Environment.NewLine;
+            string str = $"Model: {model}" + Environment.NewLine;
             str += $"Starship class: {starship_class}" + Environment.NewLine;
             str += $"Manufacturer: {manufacturer}" +Environment.NewLine;
             str += $"Cost in credits: {cost_in_credits}" + Environment.NewLine;
@@ -63,8 +62,9 @@ namespace StarWars.Data
             return str;
         }
 
-        public string showName()
-        {
+        
+        public override string ToString()
+    {
             string n = $"{Id}. {name}";
             return n;
         }

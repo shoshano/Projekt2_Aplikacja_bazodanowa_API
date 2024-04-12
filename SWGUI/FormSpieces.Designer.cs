@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSpieces));
-            TreeNode treeNode1 = new TreeNode("List of species");
             pictureBox_LOGO = new PictureBox();
             button_return = new Button();
             label_species = new Label();
-            treeView_list = new TreeView();
+            listBox_plist = new ListBox();
+            label2 = new Label();
+            textBox1 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox_LOGO).BeginInit();
             SuspendLayout();
             // 
@@ -74,17 +75,41 @@
             label_species.TabIndex = 4;
             label_species.Text = "SPECIES";
             // 
-            // treeView_list
+            // listBox_plist
             // 
-            treeView_list.BackColor = Color.Black;
-            treeView_list.ForeColor = Color.Yellow;
-            treeView_list.Location = new Point(47, 121);
-            treeView_list.Name = "treeView_list";
-            treeNode1.Name = "Node0";
-            treeNode1.Text = "List of species";
-            treeView_list.Nodes.AddRange(new TreeNode[] { treeNode1 });
-            treeView_list.Size = new Size(406, 509);
-            treeView_list.TabIndex = 5;
+            listBox_plist.BackColor = Color.Black;
+            listBox_plist.Font = new Font("Microsoft YaHei", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            listBox_plist.ForeColor = Color.Yellow;
+            listBox_plist.FormattingEnabled = true;
+            listBox_plist.ItemHeight = 28;
+            listBox_plist.Location = new Point(67, 125);
+            listBox_plist.Name = "listBox_plist";
+            listBox_plist.Size = new Size(376, 480);
+            listBox_plist.TabIndex = 5;
+            listBox_plist.MouseDoubleClick += listBox_plist_MouseDoubleClick;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Microsoft YaHei", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            label2.ForeColor = Color.Yellow;
+            label2.Location = new Point(615, 125);
+            label2.Name = "label2";
+            label2.Size = new Size(132, 46);
+            label2.TabIndex = 6;
+            label2.Text = "NAME";
+            // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.Gold;
+            textBox1.Font = new Font("Microsoft YaHei", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            textBox1.Location = new Point(615, 186);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.ScrollBars = ScrollBars.Both;
+            textBox1.Size = new Size(408, 380);
+            textBox1.TabIndex = 7;
             // 
             // FormSpieces
             // 
@@ -93,13 +118,16 @@
             BackgroundImage = Properties.Resources.background;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1128, 673);
-            Controls.Add(treeView_list);
+            Controls.Add(textBox1);
+            Controls.Add(label2);
+            Controls.Add(listBox_plist);
             Controls.Add(label_species);
             Controls.Add(button_return);
             Controls.Add(pictureBox_LOGO);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FormSpieces";
             Text = "Spieces";
+            Load += FormSpieces_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox_LOGO).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -110,6 +138,8 @@
         private PictureBox pictureBox_LOGO;
         private Button button_return;
         private Label label_species;
-        private TreeView treeView_list;
+        private ListBox listBox_plist;
+        private Label label2;
+        private TextBox textBox1;
     }
 }

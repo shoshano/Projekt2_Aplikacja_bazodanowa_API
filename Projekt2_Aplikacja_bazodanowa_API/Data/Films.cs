@@ -39,10 +39,9 @@ namespace StarWars.Data
             release_date = DateTime.Now;
         }
 
-        public override string ToString()
+        public string showAll()
         {
-            string str = $"Name: {title}" + Environment.NewLine;
-            str += $"Episode: {episode_id}" + Environment.NewLine;
+            string str = $"Episode: {episode_id}" + Environment.NewLine;
             str += $"Director: {director}" +Environment.NewLine;
             str += $"Producer: {producer}" + Environment.NewLine;
             str += $"Release date: {release_date}" + Environment.NewLine;
@@ -51,8 +50,9 @@ namespace StarWars.Data
             return str;
         }
 
-        public string showName()
-        {
+        
+        public override string ToString()
+    {
             string n = $"{Id}. {title}";
             return n;
         }
@@ -67,7 +67,7 @@ namespace StarWars.Data
             string n = "";
             foreach (Films film in results) 
             { 
-                n += film.showName() + Environment.NewLine;
+                n += film.showAll() + Environment.NewLine;
             }
             return n;
         }

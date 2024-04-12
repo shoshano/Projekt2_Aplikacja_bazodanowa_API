@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StarWars.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,10 @@ namespace SWGUI
 {
     public partial class FormFilms : Form
     {
-        public FormFilms()
+        public FormFilms(SWdatabase db)
         {
             InitializeComponent();
+            listBox_plist.DataSource = db.films.ToList<Films>();
         }
 
         private void button_return_Click(object sender, EventArgs e)
@@ -24,6 +26,13 @@ namespace SWGUI
             f.ShowDialog();
             this.Close();
         }
+
+        private void listBox_plist_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            Films film = (Films)listBox_plist.SelectedItem;
+            label2.Text = film.title;
+            textBox1.Text = film.showAll();
+        }
     }
-    
+
 }

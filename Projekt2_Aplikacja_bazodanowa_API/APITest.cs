@@ -78,7 +78,7 @@ namespace Projekt2_Aplikacja_bazodanowa_API
                     var json = await response1.Content.ReadAsStringAsync();
                     Species species = Newtonsoft.Json.JsonConvert.DeserializeObject<Species>(json);
                     species.Id = i;
-                    Console.WriteLine(species.showName());
+                    Console.WriteLine(species.showAll());
                 }
             }
         }
@@ -138,7 +138,7 @@ namespace Projekt2_Aplikacja_bazodanowa_API
                     var json = await response1.Content.ReadAsStringAsync();
                     Starships ship = Newtonsoft.Json.JsonConvert.DeserializeObject<Starships>(json);
                     ship.Id = i;
-                    Console.WriteLine(ship.showName());
+                    Console.WriteLine(ship.showAll());
                 }
             }
         }
@@ -169,7 +169,7 @@ namespace Projekt2_Aplikacja_bazodanowa_API
                     var json = await response1.Content.ReadAsStringAsync();
                     Vehicles vehicle = Newtonsoft.Json.JsonConvert.DeserializeObject<Vehicles>(json);
                     vehicle.Id = i;
-                    Console.WriteLine(vehicle.showName());
+                    Console.WriteLine(vehicle.showAll());
                 }
             }
         }
@@ -200,7 +200,7 @@ namespace Projekt2_Aplikacja_bazodanowa_API
                     var json = await response1.Content.ReadAsStringAsync();
                     Planets planet = Newtonsoft.Json.JsonConvert.DeserializeObject<Planets>(json);
                     planet.Id = i;
-                    Console.WriteLine(planet.showName());
+                    Console.WriteLine(planet.showAll());
                 }
             }
         }

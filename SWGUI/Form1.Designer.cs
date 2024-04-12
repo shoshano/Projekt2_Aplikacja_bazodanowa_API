@@ -149,7 +149,6 @@
             Name = "Form1";
             Text = "STAR WARS App";
             TransparencyKey = Color.White;
-            Load += Form1_Load_1;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

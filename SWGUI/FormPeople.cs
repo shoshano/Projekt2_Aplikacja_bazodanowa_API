@@ -24,21 +24,17 @@ namespace SWGUI
         private void button_return_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form1 f = new Form1();
-            f.ShowDialog();
+            Form1 form = new Form1();
+            form.ShowDialog();
             this.Close();
         }
 
-        private void listBox_plist_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void listBox_plist_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            People p = (People)listBox_plist.SelectedItem;
-            label2.Text = p.name;
-            textBox1.Text = p.showAll();
+            People peop = (People)listBox_plist.SelectedItem;
+            label2.Text = peop.name;
+            textBox1.Text = peop.showAll();
         }
     }
 }

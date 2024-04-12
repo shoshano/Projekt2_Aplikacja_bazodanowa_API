@@ -43,10 +43,10 @@ namespace StarWars.Data
 
         }
 
-        public override string ToString()
+        public string showAll()
         {
-            string str = $"Name: {name}" + Environment.NewLine;
-            str += $"Classification: {classification}" + Environment.NewLine;
+            
+            string str = $"Classification: {classification}" + Environment.NewLine;
             str += $"Designation: {designation}" +Environment.NewLine;
             str += $"Average hight: {average_height}" + Environment.NewLine;
             str += $"Average lifespan: {average_lifespan}" + Environment.NewLine;
@@ -57,8 +57,9 @@ namespace StarWars.Data
             return str;
         }
 
-        public string showName()
-        {
+        
+        public override string ToString()
+    {
             string n = $"{Id}. {name}";
             return n;
         }
