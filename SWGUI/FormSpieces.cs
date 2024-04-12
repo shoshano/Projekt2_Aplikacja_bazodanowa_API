@@ -13,10 +13,11 @@ namespace SWGUI
 {
     public partial class FormSpieces : Form
     {
-
+        SWdatabase DB;
         public FormSpieces(SWdatabase db)
         {
             InitializeComponent();
+            DB = db;
             listBox_plist.DataSource = db.species.ToList<Species>();
         }
 
@@ -34,9 +35,23 @@ namespace SWGUI
             Species spec = (Species)listBox_plist.SelectedItem;
             label2.Text = spec.name;
             textBox1.Text = spec.showAll();
+            label2.Visible = true;
+            textBox1.Visible = true;
         }
 
         private void FormSpieces_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox_search_TextChanged(object sender, EventArgs e)
+        {
+            string search = textBox_search.Text;
+            listBox_plist.DataSource = DB.species.Where(s => s.name.Contains(search)).ToList<Species>();
+
+        }
+
+        private void listBox_plist_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

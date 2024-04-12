@@ -11,11 +11,11 @@ public class SWDatabase : DbContext
 {
     public DbSet<Films> films { get; set; }
     public DbSet<People> people { get; set; }
-    public DbSet<Planets> planets { get; set; }
+    //public DbSet<Planets> planets { get; set; }
     public DbSet<Root> root { get; set; }
-    public DbSet<Species> species { get; set; }
-    public DbSet<Starships> starships { get; set; }
-    public DbSet<Vehicles> vehicles { get; set; }
+    //public DbSet<Species> species { get; set; }
+    //public DbSet<Starships> starships { get; set; }
+    //public DbSet<Vehicles> vehicles { get; set; }
 
 
     public string DbPath { get; }

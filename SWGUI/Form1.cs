@@ -16,7 +16,7 @@ namespace SWGUI
             InitializeComponent();
             Client = new HttpClient();
             SWdatabase = new SWdatabase();
-            if( SWdatabase.root.Any() != null) 
+            if (!SWdatabase.root.Any())
             {
                 GetData();
             }
@@ -24,7 +24,7 @@ namespace SWGUI
             {
                 root = SWdatabase.root.Find(1);
             }
-            
+
         }
 
         public async Task GetData()
@@ -32,18 +32,18 @@ namespace SWGUI
             Client = new HttpClient();
             string call = "https://swapi.dev/api/";
             string response = await Client.GetStringAsync(call);
-            root  = Newtonsoft.Json.JsonConvert.DeserializeObject<Root>(response);
+            root = Newtonsoft.Json.JsonConvert.DeserializeObject<Root>(response);
             SWdatabase.root.Add(root);
             SWdatabase.SaveChanges();
         }
 
         private async void Label_people_Click(object sender, EventArgs e)
         {
-            if (SWdatabase.people.Any() != null)
+            if (!SWdatabase.people.Any())
             {
                 Client = new HttpClient();
                 string url = root.people;
-                for (int i = 1; i <84; i++)
+                for (int i = 1; i < 84; i++)
                 {
                     string url1 = url + $"{i}" + @"/";
                     var response1 = await Client.GetAsync(url1);
@@ -65,11 +65,11 @@ namespace SWGUI
 
         private async void Label_Spieces_Click(object sender, EventArgs e)
         {
-            if (SWdatabase.species.Any() != null)
+            if (!SWdatabase.species.Any())
             {
                 Client = new HttpClient();
                 string url = root.species;
-                for (int i = 1; i <38; i++)
+                for (int i = 1; i < 38; i++)
                 {
                     string url1 = url + $"{i}" + @"/";
                     var response1 = await Client.GetAsync(url1);
@@ -91,7 +91,7 @@ namespace SWGUI
 
         private async void Label_films_Click(object sender, EventArgs e)
         {
-            if (SWdatabase.films.Any() != null)
+            if (!SWdatabase.films.Any())
             {
                 Client = new HttpClient();
                 ListOfFilms films = new ListOfFilms();
@@ -102,7 +102,7 @@ namespace SWGUI
                     var json = await response.Content.ReadAsStringAsync();
 
                     films = Newtonsoft.Json.JsonConvert.DeserializeObject<ListOfFilms>(json);
-                    films.addId();                       
+                    films.addId();
                 }
 
                 SWdatabase.films.AddRange(films.results);
@@ -117,11 +117,11 @@ namespace SWGUI
 
         private async void LAbel_Starships_Click(object sender, EventArgs e)
         {
-            if (SWdatabase.starships.Any() != null)
+            if (!SWdatabase.starships.Any())
             {
                 Client = new HttpClient();
                 string url = root.starships;
-                for (int i = 1; i <76; i++)
+                for (int i = 1; i < 76; i++)
                 {
                     string url1 = url + $"{i}" + @"/";
                     var response1 = await Client.GetAsync(url1);
@@ -144,11 +144,11 @@ namespace SWGUI
 
         private async void Label_vehicles_Click(object sender, EventArgs e)
         {
-            if (SWdatabase.vehicles.Any() != null)
+            if (!SWdatabase.vehicles.Any())
             {
                 Client = new HttpClient();
                 string url = root.vehicles;
-                for (int i = 1; i <77; i++)
+                for (int i = 1; i < 77; i++)
                 {
                     string url1 = url + $"{i}" + @"/";
                     var response1 = await Client.GetAsync(url1);
@@ -170,11 +170,11 @@ namespace SWGUI
 
         private async void Label_planets_Click(object sender, EventArgs e)
         {
-            if (SWdatabase.planets.Any() != null)
+            if (!SWdatabase.planets.Any())
             {
                 Client = new HttpClient();
                 string url = root.planets;
-                for (int i = 1; i <61; i++)
+                for (int i = 1; i < 61; i++)
                 {
                     string url1 = url + $"{i}" + @"/";
                     var response1 = await Client.GetAsync(url1);
@@ -193,6 +193,11 @@ namespace SWGUI
             this.Hide();
             form.ShowDialog();
             this.Close();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
